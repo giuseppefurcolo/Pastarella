@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: 'inter', sans-serif; }
+    textarea { width: 100%; height: 150px; }
+  </style>
+</head>
+<body>
+  <textarea id="text-input" placeholder="Paste your text here..."></textarea>
+  <button id="submit">Paste Text</button>
+  <script>
+    document.getElementById('submit').onclick = () => {
+      const text = document.getElementById('text-input').value;
+      parent.postMessage({ pluginMessage: { type: 'paste-text', text } }, '*');
+    };
+  </script>
+</body>
+</html>
