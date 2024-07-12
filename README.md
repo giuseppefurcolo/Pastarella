@@ -1,0 +1,2 @@
+# Pastarella
+Figma Plugin
