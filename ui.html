@@ -3,13 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    body { font-family: 'inter', sans-serif; }
-    textarea { width: 100%; height: 150px; }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    .textarea-container {
+      margin-bottom: 15px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 14px;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
-  <textarea id="text-input" placeholder="Paste your text here..."></textarea>
-  <button id="submit">Paste Text</button>
+  <div class="container">
+    <div class="textarea-container">
+      <textarea id="text-input" placeholder="Paste your text here..."></textarea>
+    </div>
+    <button id="submit">Paste Text</button>
+  </div>
   <script>
     document.getElementById('submit').onclick = () => {
       const text = document.getElementById('text-input').value;
