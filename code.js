@@ -11,7 +11,7 @@ figma.ui.onmessage = async msg => {
       const textNode = selectedTextNodes[i];
       const line = lines[i % lines.length];
       await figma.loadFontAsync(textNode.fontName);
-      textNode.characters = line;
+      textNode.characters = line.trim(); // Trim extra whitespace
     }
 
     figma.closePlugin();
